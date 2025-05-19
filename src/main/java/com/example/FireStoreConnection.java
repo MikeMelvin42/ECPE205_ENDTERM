@@ -20,10 +20,10 @@ public class FireStoreConnection {
     private Firestore db;
 
     public FireStoreConnection() throws IOException {
-        try {
+
             // Load the service account key from resources
             InputStream serviceAccount = getClass().getClassLoader()
-                    .getResourceAsStream("src/main/resources/first-f22fd-firebase-adminsdk-fbsvc-66d022565a.json");
+                    .getResourceAsStream("src/main/resources/first-f22fd-firebase-adminsdk-fbsvc-79142428e2.json");
 
             if (serviceAccount == null) {
                 throw new IOException("Firebase credentials file not found in resources");
@@ -40,9 +40,7 @@ public class FireStoreConnection {
             }
 
             this.db = FirestoreClient.getFirestore();
-        } catch (IOException e) {
-            throw new IOException("Failed to initialize Firestore: " + e.getMessage(), e);
-        }
+
     }
 
     public void addEmployee(Employee employee) throws InterruptedException, ExecutionException {
