@@ -1,7 +1,20 @@
-package com.example;
+package org.example;
+import javax.swing.*;
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SwingUtilities.invokeLater(() -> {
+            try {
+                GUIFrame frame = new GUIFrame("Employee Management System");
+                frame.setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,
+                        "Fatal Error: " + e.getMessage(),
+                        "Startup Failure",
+                        JOptionPane.ERROR_MESSAGE);
+                System.exit(1);
+            }
+        });
     }
 }

@@ -31,7 +31,7 @@ public class FireStoreConnection {
 
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .setDatabaseUrl("\n" +
+                    .setDatabaseUrl(
                             "https://first-f22fd-default-rtdb.asia-southeast1.firebasedatabase.app/")
                     .build();
 
